@@ -10,7 +10,7 @@ unsigned char code MASTER_CARD[] = "18008DC02E7B"; //the master
 
 unsigned char rfid_data[12]; // ma dang quet
 
-// --- KHAI B¡O H¿M (PROTOTYPES) ---
+//Khai b√°o h√†m
 void Delay_ms(unsigned int t);
 void UART_Init(void);
 void UART_Receive_Tag(void);
@@ -22,7 +22,7 @@ void main() {
 		unsigned char Mode = 0; // 0:che do thuong, 1:che do them the
 
     //trang thai ban dau
-    RELAY = 0;      // KhÛa cua
+    RELAY = 0;      // Kh√≥a cua
     BUTTON = 1;     // nut bam
     
     //cac module
@@ -34,7 +34,7 @@ void main() {
     LCD_Cmd(0xC0); LCD_String("System Ready..");
     Delay_ms(1000);
     
-    //m‡n hinh chinh
+    //m√†n hinh chinh
     LCD_Cmd(0x01); Delay_ms(10);
     LCD_String("RFID ACCESS");
     LCD_Cmd(0xC0);
@@ -131,14 +131,14 @@ void Open_Door() {
     RELAY = 0;
 }
 
-// --- UART & FILTERING ---
+//khoi tao UART
 void UART_Init() {
     TMOD = 0x20;  // timer 1 mode 2 
     TH1 = 0xFD;   // 9600 baud - 11.0592MHz
     SCON = 0x50;  // mode 1, REN = 1
     TR1 = 1;      // bat dau dem timer1
 }
-
+//xu ly va nhan du lieu
 void UART_Receive_Tag() {
     unsigned char i = 0;
     unsigned char temp;
@@ -168,4 +168,5 @@ unsigned char Check_Is_Master() {
         if(rfid_data[i] != MASTER_CARD[i]) return 0;
     }
     return 1;
+
 }
