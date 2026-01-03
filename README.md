@@ -2,7 +2,7 @@
 Mô phỏng hệ thống kiểm soát ra vào
 ## Cấu trúc dự án
 - **main.c**: Code xử lý trung tâm, điều phối hoạt động của hệ thống.
-- **I2C_EEPROM.c/h**: Thư viện giao tiếp chuẩn I2C để đọc/ghi dữ liệu thẻ vào chip nhớ 24C04.
+- **I2C_EEPROM.c/h**: Thư viện giao tiếp chuẩn I2C và các hàm chức năng để đọc/ghi dữ liệu thẻ vào chip nhớ 24C04.
 - **LCD.c/h**: Thư viện điều khiển màn hình LCD 16x2.
 - **main.pdsprj**: File mô phỏng mạch nguyên lý trên phần mềm Proteus.
 
